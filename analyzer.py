@@ -1,13 +1,16 @@
 import psycopg2
 import pandas as pd 
 from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_connection():
     return psycopg2.connect(
-        host="localhost",
-        database="company_intel",
-        user="postgres",
-        password="200524"
+        host=os.getenv("DB_HOST"),
+        database=os.getenv("DB_NAME"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD")
     )
 
 def load_news(company_name: str) -> pd.DataFrame:
