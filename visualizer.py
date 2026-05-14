@@ -11,7 +11,7 @@ def plot_sources(df: pd.DataFrame, company_name: str):
     ax.barh(source_counts.index, source_counts.values, color='skyblue')
     ax.set_xlabel("Liczba artykułów")
     ax.set_title(f"Top 10 źródeł informacji dla {company_name}")   
-    ax.invert_yaxis()  # Odwróć oś Y, aby najczęstsze źródła były na górze
+    ax.invert_yaxis() 
 
     plt.tight_layout()
     return fig
